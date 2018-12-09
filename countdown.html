@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Countdown </h1>
+	<span style="font-size: 14px;"> Session will end in </span><span id="mmm" style="font-size: 14px;"></span><span id="cco" style="font-size: 14px;"></span>
+</body>
+</html>
+
+<script type="text/javascript">
+	(function count(cc) {
+	  var a = document.getElementById("cco").value = cc;
+	  a =parseInt(a);
+	  if(a>=60)
+	  {
+	  	document.getElementById("mmm").innerHTML = "1:";
+	    var ss = a - 60;    
+	    if(ss<10)
+	      document.getElementById("cco").innerHTML = '0'+ss;
+	    else  	
+	      document.getElementById("cco").innerHTML = ss;
+	  }
+	  if(a<60){
+	  	document.getElementById("mmm").innerHTML = "0:"; 
+	    if(a<10){   	   
+	      document.getElementById("cco").innerHTML = '0'+cc;
+	      }
+	    else{     	
+	      document.getElementById("cco").innerHTML = cc;
+	      }
+	  }
+	  	
+	  if (cc > 0)
+	  	setTimeout(function() { count(--cc); }, 1000);
+	})(119);
+</script>
